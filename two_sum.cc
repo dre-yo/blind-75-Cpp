@@ -10,7 +10,7 @@ std::vector<int> TwoSum(std::vector<int>& nums, int target) {
 
     for (int i = 0; i < n; i++){
         int goal = target - nums[i];
-        if (visited.count(goal) > 0 && visited[goal] != i){
+        if (visited.count(goal) > 0){
             return {visited[goal], i};
         }
         visited[nums[i]] = i;

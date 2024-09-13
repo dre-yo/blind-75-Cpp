@@ -10,10 +10,12 @@ int MaxProfit(std::vector<int>& prices){
     r = 1;
 
     while (r < n){
+        // if buy price bigger than sell price buy pointer moves to sell
         if (prices[r] < prices[l]){
             l = r;
         }
-        else if (prices[r] > prices[l]){
+        // if sale price larger than buy price check if max
+        else if (prices[r] > prices[l]){ 
             max = std::max(max, prices[r] - prices[l]);
         }
         r++;

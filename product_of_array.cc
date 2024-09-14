@@ -47,7 +47,7 @@ std::vector<int> ProductExceptself(std::vector<int>& nums) {
 }
 
 // Helper function to print a vector
-void printVector(const std::vector<int>& vec) {
+void PrintVector(const std::vector<int>& vec) {
   std::cout << "[ ";
   for (const auto& elem : vec) {
     std::cout << elem << " ";
@@ -55,13 +55,13 @@ void printVector(const std::vector<int>& vec) {
   std::cout << "]\n";
 }
 
-void runTest(int test_case_number, std::vector<int>& nums,
+void RunTest(int test_case_number, std::vector<int>& nums,
              std::vector<int>& expected) {
   std::vector<int> result = ProductExceptself(nums);
   std::cout << "Case " << test_case_number << " expected: ";
-  printVector(expected);
+  PrintVector(expected);
   std::cout << "Case " << test_case_number << " result: ";
-  printVector(result);
+  PrintVector(result);
 
   if (result != expected) {
     std::cout << "Test Case " << test_case_number << " Failed!\n";
@@ -78,8 +78,8 @@ int main(void) {
   std::vector<int> case2 = {-1, 1, 0, -3, 3};
   std::vector<int> expected_case2 = {0, 0, 9, 0, 0};
 
-  runTest(1, case1, expected_case1);
-  runTest(2, case2, expected_case2);
+  RunTest(1, case1, expected_case1);
+  RunTest(2, case2, expected_case2);
 
   return 0;
 }

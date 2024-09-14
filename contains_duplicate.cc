@@ -25,7 +25,7 @@ bool ContainsDuplicate(std::vector<int> &nums) {
   return false;
 }
 
-void runTest(int test_case_num, std::vector<int> &nums, bool expected) {
+void RunTest(int test_case_num, std::vector<int> &nums, bool expected) {
   bool result = ContainsDuplicate(nums);
   std::cout << "Case " << test_case_num << " expected: " << expected << "\n";
   std::cout << "Case " << test_case_num << " result: " << result << "\n";
@@ -43,8 +43,8 @@ int main(void) {
   std::vector<int> case2 = {1, 2, 3, 4};
   std::vector<int> case3 = {1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
 
-  runTest(1, case1, true);
-  runTest(2, case2, false);
-  runTest(3, case3, true);
+  RunTest(1, case1, true);
+  RunTest(2, case2, false);
+  RunTest(3, case3, true);
   return 0;
 }

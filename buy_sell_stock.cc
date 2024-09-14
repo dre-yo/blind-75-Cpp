@@ -33,7 +33,7 @@ int MaxProfit(std::vector<int> &prices) {
   return max;
 }
 
-void runTest(int testCaseNum, std::vector<int> &prices, int expected) {
+void RunTest(int testCaseNum, std::vector<int> &prices, int expected) {
   int result = MaxProfit(prices);
   std::cout << "Case " << testCaseNum << " expected: " << expected << "\n";
   std::cout << "Case " << testCaseNum << " result: " << result << "\n";
@@ -50,8 +50,8 @@ int main() {
   std::vector<int> case1 = {7, 1, 5, 3, 6, 4};
   std::vector<int> case2 = {7, 6, 4, 3, 1};
 
-  runTest(1, case1, 5);
-  runTest(2, case2, 0);
+  RunTest(1, case1, 5);
+  RunTest(2, case2, 0);
 
   return 0;
 }

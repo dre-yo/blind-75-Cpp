@@ -1,8 +1,8 @@
 # Define variables
 CXX = g++
 CXXFLAGS = -std=c++20
-TARGET = test
-SRC = contains_duplicate.cc
+TARGET = $(basename $(SRC))
+SRC = $(file).cc
 
 # Default target
 all: $(TARGET)
@@ -16,3 +16,6 @@ $(TARGET): $(SRC)
 # Clean up the executable
 clean:
 	rm -f $(TARGET)
+
+# Phony target to avoid confusion with files named 'file'
+.PHONY: all clean

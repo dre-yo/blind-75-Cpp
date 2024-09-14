@@ -1,3 +1,13 @@
+/*
+ * Project Name: Blind 75 C++
+ * File Name: buy_sell_stock.cpp
+ * Author: Drew York
+ * Date: 2024-09-13
+ *
+ * Description: solution to the buy and sell stock leetcode problem
+ *
+ */
+
 #include <iostream>
 #include <vector>
 int MaxProfit(std::vector<int> &prices) {

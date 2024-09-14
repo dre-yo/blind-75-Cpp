@@ -1,3 +1,13 @@
+/*
+ * Project Name: Blind 75 C++
+ * File Name: contains_duplicate.cpp
+ * Author: Drew York
+ * Date: 2024-09-13
+ *
+ * Description: solution to the contains duplicate leetcode problem
+ *
+ */
+
 #include <iostream>
 #include <unordered_set>
 #include <vector>

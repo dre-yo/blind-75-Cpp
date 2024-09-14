@@ -1,3 +1,12 @@
+/*
+ * Project Name: Blind 75 C++
+ * File Name: two_sum.cpp
+ * Author: Drew York
+ * Date: 2024-09-13
+ *
+ * Description: solution to the two sum leetcode problem
+ *
+ */
 #include <iostream>
 #include <map>
 #include <vector>

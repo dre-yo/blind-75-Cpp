@@ -1,1 +1,25 @@
+# Ignore build artifacts
+*.o
+*.out
+*.exe
+*.a
+*.so
+test_executable
+
+# Ignore build directories
+build/
+bin/
+
+# Ignore gTest build directory
+external/googletest/build/
+
+# Ignore Makefile-generated executables
+
+
+# Ignore system-specific files
+*.swp
+*.DS_Store
 .vscode
+
+# Optionally, ignore external libraries
+# external/googletest/

@@ -1,21 +1,30 @@
 # Define variables
-CXX = g++
-CXXFLAGS = -std=c++20
-TARGET = $(basename $(SRC))
-SRC = $(file).cc
+CXX = clang++
+CXXFLAGS = -std=c++20 -Iexternal/googletest/googletest/include
+LDFLAGS = -pthread
+BUILD_DIR = build/
+TEST_TARGET = test_executable
+SRC = solution/$(file).cc
+TESTS = tests/$(file)_test.cc
 
-# Default target
-all: $(TARGET)
-	./$(TARGET)
-	rm -f $(TARGET)
+# Create the build directory if it doesn't exist
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
 
-# Rule to build the executable
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+# Rule to build the test executable
+$(BUILD_DIR)$(TEST_TARGET): $(TESTS) $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)$(TEST_TARGET) $(TESTS) external/googletest/build/lib/libgtest.a external/googletest/build/lib/libgtest_main.a $(LDFLAGS)
 
-# Clean up the executable
+# Build target to compile the tests
+all: $(BUILD_DIR)$(TEST_TARGET)
+
+# Rule to run the tests
+test: $(BUILD_DIR)$(TEST_TARGET)
+	./$(BUILD_DIR)$(TEST_TARGET)
+
+# Clean up the build directory
 clean:
-	rm -f $(TARGET)
+	rm -rf $(BUILD_DIR)
 
-# Phony target to avoid confusion with files named 'file'
-.PHONY: all clean
+# Phony targets
+.PHONY: all clean test

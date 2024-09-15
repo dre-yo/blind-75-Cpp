@@ -12,7 +12,7 @@ bin/
 
 # Ignore gTest build directory
 external/googletest/build/
-
+external/
 # Ignore Makefile-generated executables
 
 

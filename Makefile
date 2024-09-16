@@ -1,6 +1,6 @@
 # Define variables
 CXX = clang++
-CXXFLAGS = -std=c++20 -Iexternal/googletest/googletest/include
+CXXFLAGS = -std=c++20 -Iexternal/googletest/googletest/include -Wall -Wextra -g
 LDFLAGS = -pthread
 BUILD_DIR = build/
 TEST_TARGET = test_executable

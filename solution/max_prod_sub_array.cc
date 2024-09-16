@@ -9,33 +9,26 @@
  *
  */
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
 
 int MaxProduct(std::vector<int>& nums) {
   int n = nums.size();
-  int max = nums[0];
+  int max = *std::max_element(nums.begin(), nums.end());
   int currMax = 1;
   int currMin = 1;
-}
 
-void RunTest(int test_case_num, std::vector<int>& prices, int expected) {
-  int result = MaxProduct(prices);
-  std::cout << "Case " << test_case_num << " expected: " << expected << "\n";
-  std::cout << "Case " << test_case_num << " result: " << result << "\n";
-
-  if (result != expected) {
-    std::cout << "Test Case " << test_case_num << " Failed!\n";
-  } else {
-    std::cout << "Test Case " << test_case_num << " Passed.\n";
+  for (int i = 0; i < n; i++) {
+    if (nums[i] == 0) {
+      currMax = 1;
+      currMin = 1;
+      continue;
+    }
+    int temp = currMax * nums[i];
+    currMax = std::max({nums[i] * currMax, nums[i] * currMin, nums[i]});
+    currMin = std::min({nums[i] * currMin, temp, nums[i]});
+    max = std::max(max, currMax);
   }
-  std::cout << "\n";
-}
-
-int main(void) {
-  std::vector<int> case1 = {2, 3, -2, 4};
-  std::vector<int> case2 = {-2, 0, -1};
-  RunTest(1, case1, 6);
-  RunTest(2, case2, 0);
-  return 0;
+  return max;
 }

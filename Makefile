@@ -19,6 +19,9 @@ test: $(BUILD_DIR)$(TEST_TARGET)
 	./$(BUILD_DIR)$(TEST_TARGET)
 		rm -rf $(BUILD_DIR)
 
+# Clean up the build directory
+clean:
+	rm -rf $(BUILD_DIR)
 
 # Phony targets
 .PHONY: clean test

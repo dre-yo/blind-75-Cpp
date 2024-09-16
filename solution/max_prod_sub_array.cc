@@ -2,7 +2,7 @@
  * Project Name: Blind 75 C++
  * File Name: max_prod_sub_array.cpp
  * Author: Drew York
- * Date: 2024-09-13
+ * Date: 2024-09-15
  *
  * Description: solution to the maximum
  * product subarray leetcode problem

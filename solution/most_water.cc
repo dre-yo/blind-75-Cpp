@@ -1,12 +1,11 @@
 /*
  * Project Name: Blind 75 C++
- * File Name: three_sum.cc
+ * File Name: most_water.cc
  * Author: Drew York
- * Date: 2024-09-16
+ * Date: 2024-09-28
  *
- * Description: solution to the three sum
- * leetcode problem
- *
+ * Description: solution to the most 
+ * water leetcode problem
  */
 #include <iostream>
 #include <vector>

@@ -12,10 +12,6 @@ struct TreeNode {
 };
 
 class Solution {
- private:
-  int preorder_index = 0;
-  std::unordered_map<int, int> mapping;
-
  public:
   TreeNode* BuildTree(std::vector<int>& preorder, std::vector<int>& inorder) {
     mapping.clear();
@@ -28,6 +24,9 @@ class Solution {
   }
 
  private:
+  int preorder_index = 0;
+  std::unordered_map<int, int> mapping;
+
   TreeNode* Build(std::vector<int>& preorder, int start, int end) {
     if (start > end) return nullptr;
 
